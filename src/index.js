@@ -1,14 +1,6 @@
-import foo from './foo'
+// import foo from './foo'
+import * as directive from './directive'
 
-console.log(foo)
+// directive.spread()
 
-var a = 1
-
-var b = () => {
-  let a = 2
-  alert(a)
-}
-
-b()
-
-  [1, 2, 3].reduce()
+window.log = Object.assign({}, directive)
