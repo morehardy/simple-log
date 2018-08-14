@@ -1,21 +1,61 @@
 import iconKeys from './icon'
 
-// clear
+// clear before of this line
 export const clear = () => {
   return console.clear()
 }
 
-// spread
+/**
+ * spread symbol to split context
+ * @param {*} spread spread symbol
+ * @param {*} num symbol num
+ */
 export const spread = (spread = '-', num = 200) => {
   const str = 'spread'.padEnd(num + 6, spread.toString())
   return console.log(str)
 }
 
-// img
-export const img = key => {
+/**
+ * show img
+ * @param {string} key : url or icon key
+ * @param {?} data : debug data
+ * @param {number} scale : image scale
+ * icon default scale is 0.2
+ */
+export const img = (key, data, scale) => {
   // constructor
-  const creatImg = url => {
-    console.log('%c ', `padding:50px;background:url(${url}); background-repeat: no-repeat; background-size: contain; background-position: center;`)
+  const creatImg = (url, data, scale) => {
+    const node = document.createElement('img')
+    node.src = url
+    node.onload = function () {
+      const width = node.width / 2 * scale
+      const height = node.height / 2 * scale
+      debugger
+      console.log('%c ', `padding:${height}px ${width}px;background:url(${url}); background-repeat: no-repeat; background-size: contain; background-position: center;`, data)
+    }
   }
-  iconKeys[key] ? creatImg(iconKeys[key]) : creatImg(key)
+  iconKeys[key] ? creatImg(iconKeys[key], data, 0.2) : creatImg(key, data)
+}
+
+/* eslint-disable */
+export const group = callback => {
+  console.group()
+  const wait = () => {
+    try {
+      if (typeof callback === 'function') {
+        callback()
+        return Promise.resolve()
+      } else {
+        throw 'callback is not a function'
+      }
+    } catch (err) {
+      // console.log(err)
+      return Promise.reject(err)
+    }
+  }
+  wait().then(() => {
+    console.groupEnd()
+  }).catch(err => {
+    console.warn(err)
+  })
 }
