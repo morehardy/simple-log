@@ -23,18 +23,14 @@
 // console.image('http://ms2.ctjh.ntpc.edu.tw/~luti/99-2/pivot/004-1.gif')
 // console.log("%c" + dim.string, dim.style + "background: url(" + url + "); background-size: " + (this.width * scale) + "px " + (this.height * scale) + "px; color: transparent;");
 
-log.group(
-  () => {
-    console.dir(obj)
-    console.log(obj)
-    log.img('cherry', 1)
-  }
-)
+// log.group(
+//   () => {
+//     console.dir(obj)
+//     console.log(obj)
+//     log.img('cherry', 1)
+//   }
+// )
 
-function a () {
-  console.log(1)
-  a()
-}
 const object = {
  'a': [{ 'b': 2 }, { 'd': 4 }]
 }
@@ -43,9 +39,11 @@ const other = {
   'a': [{ 'c': 3 }, { 'e': 5 }]
 }
 
+
 var aa = deepmerge(object, other)
-console.log(aa)
-debugger
+log.table(object)
+
+// console.log(aa)
 
 </script>
 

@@ -38,6 +38,9 @@ export const img = (key, data, scale) => {
 }
 
 /* eslint-disable */
+/**
+ * @param {fn} callback: do something
+ */
 export const group = callback => {
   console.group()
   const wait = () => {
@@ -58,4 +61,16 @@ export const group = callback => {
   }).catch(err => {
     console.warn(err)
   })
+}
+/* eslint-able */
+export const table = data => {
+  const filter = data => {
+    for (let i in data) {
+      if (typeof data[i] !== 'string') {
+        data[i] = JSON.stringify(data[i])
+      }
+    }
+    return data
+  }
+  console.table(filter(data))
 }
