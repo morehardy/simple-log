@@ -1,4 +1,5 @@
 import iconKeys from './icon'
+import formaters from './formaters'
 
 // clear before of this line
 export const clear = () => {
@@ -63,6 +64,7 @@ export const group = callback => {
   })
 }
 /* eslint-able */
+
 export const table = data => {
   const filter = data => {
     for (let i in data) {
@@ -74,3 +76,18 @@ export const table = data => {
   }
   console.table(filter(data))
 }
+
+
+export const log = content => {
+  formaters.forEach(obj => {
+    // console.log(content)
+    // console.log(obj.regexp.test(content))
+    console.log(obj.filter(content , content.match(obj.regexp)[0]))
+    if (obj.regexp.test(content)) {
+      const newContent = obj.filter(content , content.match(obj.regexp)[0])
+      console.log(newContent, obj.style)
+    }
+  })
+}
+
+log('哈哈哈`发大水发`')
