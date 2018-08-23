@@ -13,7 +13,6 @@
 
 const filter = target => {
   const t = target.slice(1, -1)
-  console.log(t)
   return `%c${t}%c`
 }
 const formaters = [
