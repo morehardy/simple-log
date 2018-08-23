@@ -1,16 +1,6 @@
 /**
  * regular exexpression for markdown syntax
  */
-
-// ` ` code type
-// codeType = /`.*?`/
-
-// _ _ bold type
-// boldType = /\_.*?\_/
-
-// * * italic type
-// italicType = /\*.*?\*/
-
 const filter = target => {
   const t = target.slice(1, -1)
   return `%c${t}%c`
