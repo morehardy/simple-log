@@ -32,7 +32,7 @@ const formaters = [
   },
   // # h1
   {
-    regexp: /#.*/,
+    regexp: /# .*/,
     style: 'font-size: 46px; font-weight: bold; color: #000;',
     filter: (content, target) => {
       return content.replace(target, filter(target))

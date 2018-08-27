@@ -64,7 +64,10 @@ export const group = callback => {
   })
 }
 /* eslint-able */
-
+/**
+ * 
+ * @param {?} data to table 
+ */
 export const table = data => {
   const filter = data => {
     for (let i in data) {
@@ -79,19 +82,24 @@ export const table = data => {
 
 
 export const log = content => {
+  // cache status
+  let isHave = false
   formaters.forEach(obj => {
-    // console.log(content)
-    // console.log(obj.regexp.test(content))
     if (obj.regexp.test(content)) {
+      alert(content)
       const newContent = obj.filter(content , content.match(obj.regexp)[0])
       console.log(newContent, obj.style, '')
+      isHave = true
+      // return ;
     }
   })
+  if (!isHave) console.log(content)
 }
 
 log('哈哈哈`发大水发`')
 log('code `this => cosnole()`')
 log(`粗体_bold_`)
 log('粗体*bold*')
-log('#hdhdhh3213123123123213213123123123123123fdsf')
-log('##hdhdhh3213123123123213213123123123123123fdsf')
+log('# hdhdhh3213123123123213213123123123123123fdsf')
+log('# hdhdhh3213123123123213213123123123123123fdsf')
+log(111111111111111111111111111111)
