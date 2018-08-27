@@ -63,6 +63,7 @@ export const group = callback => {
     console.warn(err)
   })
 }
+
 /* eslint-able */
 /**
  * @param {?} data to table 
