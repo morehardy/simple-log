@@ -65,7 +65,6 @@ export const group = callback => {
 }
 /* eslint-able */
 /**
- * 
  * @param {?} data to table 
  */
 export const table = data => {
@@ -90,7 +89,6 @@ export const log = content => {
       const newContent = obj.filter(content , content.match(obj.regexp)[0])
       console.log(newContent, obj.style, '')
       isHave = true
-      // return ;
     }
   })
   if (!isHave) console.log(content)
