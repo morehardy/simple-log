@@ -25,7 +25,7 @@ export const spread = (spread = '-', num = 200) => {
  */
 export const img = (key, data, scale) => {
   // constructor
-  const creatImg = (url, data, scale) => {
+  const creatImg = (url, data = '', scale) => {
     const node = document.createElement('img')
     node.src = url
     node.onload = function () {
@@ -85,7 +85,6 @@ export const log = content => {
   let isHave = false
   formaters.forEach(obj => {
     if (obj.regexp.test(content)) {
-      alert(content)
       const newContent = obj.filter(content , content.match(obj.regexp)[0])
       console.log(newContent, obj.style, '')
       isHave = true
