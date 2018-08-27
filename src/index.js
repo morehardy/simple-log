@@ -3,4 +3,4 @@ import * as directive from './directive'
 
 // directive.spread()
 
-window.log = Object.assign({}, directive)
+window.slog = Object.assign({}, directive)

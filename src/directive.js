@@ -95,11 +95,3 @@ export const log = content => {
   })
   if (!isHave) console.log(content)
 }
-
-log('哈哈哈`发大水发`')
-log('code `this => cosnole()`')
-log(`粗体_bold_`)
-log('粗体*bold*')
-log('# hdhdhh3213123123123213213123123123123123fdsf')
-log('# hdhdhh3213123123123213213123123123123123fdsf')
-log(111111111111111111111111111111)

@@ -1,8 +1,8 @@
 /**
  * regular exexpression for markdown syntax
  */
-const filter = target => {
-  const t = target.slice(1, -1)
+const filter = (target, start = 1) => {
+  const t = target.slice(start, -1)
   return `%c${t}%c`
 }
 const formaters = [
@@ -35,7 +35,7 @@ const formaters = [
     regexp: /# .*/,
     style: 'font-size: 46px; font-weight: bold; color: #000;',
     filter: (content, target) => {
-      return content.replace(target, filter(target))
+      return content.replace(target, filter(target + ' ', 2))
     }
   }
 ]
