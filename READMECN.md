@@ -8,7 +8,7 @@
 - 支持部分markdown语法
 - 快速创建group
 - 生成表格
-- 便捷的分割符生成
+- 快速生成分割线
 
 #### img
 ```js
@@ -49,4 +49,21 @@ slog.img('http://ms2.ctjh.ntpc.edu.tw/~luti/99-2/pivot/004-1.gif')
 ```
 
 #### markdown
+```js
+slog.log(text)
 
+eg:
+slog.log('# h1 on the line')
+```
+
+> 支持的markdown语法
+
+```
+# : 生成标题
+
+``: 代码块样式
+
+_ _: 文字加粗
+
+* *: 文字倾斜
+```
