@@ -12,13 +12,13 @@
 
 #### img
 ```js
-slog.img([url, imgKey], text)
+slog.img([url, imgKey], scale)
 ```
 | 参数 | 类型 | 描述 |
 | --- | ---- | ---- |
 | url | string | 图片地址 |
 | imgKey | string | 内置图片,详情请点击 |
-| text   | ?     | 文字? |
+| scale   | number  | 图片比率 |
 
 
 > 使用内置图片
@@ -78,7 +78,7 @@ slog.group(fn)
 
 eg:
 slog.group(() => {
-  slog.log('# the end')
+  slog.log('# start')
   slog.img('http://ms2.ctjh.ntpc.edu.tw/~luti/99-2/pivot/004-1.gif')
   slog.log('see *italic*')
   slog.spread('-')

@@ -23,19 +23,19 @@ export const spread = (spread = '-', num = 200) => {
  * @param {number} scale : image scale
  * icon default scale is 0.2
  */
-export const img = (key, data, scale) => {
+export const img = (key, scale) => {
   // constructor
-  const creatImg = (url, data = '', scale) => {
+  const creatImg = (url, scale = 1) => {
     const node = document.createElement('img')
     node.src = url
     node.onload = function () {
       const width = node.width / 2 * scale
       const height = node.height / 2 * scale
       debugger
-      console.log('%c ', `padding:${height}px ${width}px;background:url(${url}); background-repeat: no-repeat; background-size: contain; background-position: center;`, data)
+      console.log('%c ', `padding:${height}px ${width}px;background:url(${url}); background-repeat: no-repeat; background-size: contain; background-position: center;`)
     }
   }
-  iconKeys[key] ? creatImg(iconKeys[key], data, 0.2) : creatImg(key, data)
+  iconKeys[key] ? creatImg(iconKeys[key], 0.2) : creatImg(key, scale)
 }
 
 /* eslint-disable */

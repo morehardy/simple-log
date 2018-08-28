@@ -42,12 +42,20 @@ const other = {
 
 slog.log('# h1 on the line')
 slog.table(object)
-slog.img('watermelon')
+// slog.img('watermelon')
 
-slog.group(function() {
-  slog.img('watermelon')
-  slog.img('cherry')
-  slog.log('`this => alert(this)`')
+// slog.group(function() {
+//   slog.img('watermelon')
+//   slog.img('cherry')
+//   slog.log('`this => alert(this)`')
+// })
+
+slog.group(() => {
+  slog.log('# start')
+  slog.img('http://ms2.ctjh.ntpc.edu.tw/~luti/99-2/pivot/004-1.gif', .1)
+  slog.log('see *italic*')
+  slog.spread('-')
+  slog.log('# the end')
 })
 </script>
 
