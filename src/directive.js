@@ -44,10 +44,10 @@ export const img = (key, scale) => {
  */
 export const group = callback => {
   console.group()
-  const wait = () => {
+  async function wait () {
     try {
       if (typeof callback === 'function') {
-        callback()
+        await callback()
         return Promise.resolve()
       } else {
         throw 'callback is not a function'
@@ -57,6 +57,19 @@ export const group = callback => {
       return Promise.reject(err)
     }
   }
+  // const wait = () => {
+  //   try {
+  //     if (typeof callback === 'function') {
+  //       callback()
+  //       return Promise.resolve()
+  //     } else {
+  //       throw 'callback is not a function'
+  //     }
+  //   } catch (err) {
+  //     // console.log(err)
+  //     return Promise.reject(err)
+  //   }
+  // }
   wait().then(() => {
     console.groupEnd()
   }).catch(err => {
