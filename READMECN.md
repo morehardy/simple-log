@@ -49,6 +49,7 @@ slog.img('http://ms2.ctjh.ntpc.edu.tw/~luti/99-2/pivot/004-1.gif')
 ```
 
 #### markdown
+
 ```js
 slog.log(text)
 
@@ -66,4 +67,21 @@ slog.log('# h1 on the line')
 _ _: 文字加粗
 
 * *: 文字倾斜
+```
+
+#### 生成group
+
+> 将部分console信息集中为一个群组
+
+```js
+slog.group(fn)
+
+eg:
+slog.group(() => {
+  slog.log('# the end')
+  slog.img('http://ms2.ctjh.ntpc.edu.tw/~luti/99-2/pivot/004-1.gif')
+  slog.log('see *italic*')
+  slog.spread('-')
+  slog.log('# the end')
+})
 ```
