@@ -43,6 +43,12 @@ const other = {
 slog.log('# h1')
 slog.table(object)
 slog.img('watermelon')
+
+slog.group(function() {
+  slog.img('watermelon')
+  slog.img('cherry')
+  slog.log('`this => alert(this)`')
+})
 </script>
 
 </html>
